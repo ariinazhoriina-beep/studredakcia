@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Темы постов, подборок и интервью на конец ноября и декабрь: студредакция «МГИМО для иностранцев».">
+<meta property="og:title" content="Идеи русско-английской редакции">
+<meta property="og:description" content="Темы постов, подборок и интервью на конец ноября и декабрь: студредакция «МГИМО для иностранцев».">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ariinazhoriina-beep.github.io/studredakcia/cover-ruen.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23192F9A'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'%3EСР%3C/text%3E%3C/svg%3E">
+<title>Идеи русско-английской редакции</title>
+<style>body{margin:0}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: одна колонка чтения, сетка карточек по направлениям, полоса статуса площадок наверху */
+:root{
+  --bg:#F5F6FA; --surface:#FFFFFF; --ink:#141A33; --muted:#5A6180; --line:#DDE1EC;
+  --blue:#192F9A; --blue-soft:#E3E8FB; --red:#B3192E; --red-soft:#FBE6E9;
+  --ok:#1F7A4D; --ok-soft:#E2F3EA; --pause:#9A5B00; --pause-soft:#FBF0DD;
+  --f-display:"Unbounded","Golos Text",system-ui,sans-serif;
+  --f-body:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1324; --surface:#171C33; --ink:#E9ECF7; --muted:#9AA1BF; --line:#2A3152;
+  --blue:#9FB0FF; --blue-soft:#222B5A; --red:#FF8B9B; --red-soft:#3D1820;
+  --ok:#6FD3A0; --ok-soft:#163327; --pause:#F2B860; --pause-soft:#3A2A12; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1324; --surface:#171C33; --ink:#E9ECF7; --muted:#9AA1BF; --line:#2A3152;
+  --blue:#9FB0FF; --blue-soft:#222B5A; --red:#FF8B9B; --red-soft:#3D1820;
+  --ok:#6FD3A0; --ok-soft:#163327; --pause:#F2B860; --pause-soft:#3A2A12; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{text-wrap:balance;margin:0}
+h1{font-family:var(--f-display);font-weight:600;font-size:clamp(28px,5vw,44px);line-height:1.1;letter-spacing:-.01em}
+h2{font-family:var(--f-display);font-weight:500;font-size:20px;line-height:1.25}
+h3{font-size:16.5px;font-weight:600;line-height:1.35}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+.lead{font-size:17px;max-width:62ch;color:var(--ink)}
+.muted{color:var(--muted)}
+
+header{display:flex;flex-direction:column;gap:14px}
+.ask{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;background:var(--blue);color:#fff;border-radius:14px;padding:20px 22px;max-width:760px}
+:root[data-theme="dark"] .ask{color:#0F1324}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ask{color:#0F1324}}
+.ask .q{font-family:var(--f-display);font-weight:600;font-size:15px;line-height:1.3}
+.ask p{font-size:15px;max-width:60ch}
+.ask .mark{width:36px;height:36px;border-radius:50%;border:2px solid currentColor;display:grid;place-items:center;font-family:var(--f-display);font-weight:600;font-size:18px}
+
+/* площадки */
+.plats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:760px){.plats{grid-template-columns:1fr}}
+.plat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.plat .row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.plat .name{font-weight:600}
+.state{font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.state.ok{color:var(--ok);background:var(--ok-soft)}
+.state.pause{color:var(--pause);background:var(--pause-soft)}
+.state.help{color:var(--blue);background:var(--blue-soft)}
+.plat p{font-size:14px;color:var(--muted)}
+
+/* фильтры */
+.filters{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:20px}
+.frow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.flabel{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);min-width:92px}
+.chipbtn{font:inherit;font-size:13.5px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;transition:background .15s,border-color .15s}
+.chipbtn:hover{border-color:var(--blue)}
+.chipbtn[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--surface)}
+.chipbtn:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.count{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.legend{font-size:13.5px;color:var(--muted);max-width:70ch}
+
+/* направления и карточки */
+.dir{display:flex;flex-direction:column;gap:14px}
+.dir-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.dir-head .n{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.dir-head p{flex-basis:100%;font-size:14px;color:var(--muted);max-width:70ch}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:820px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tag{font-size:12px;font-weight:500;padding:2px 8px;border-radius:6px;background:var(--bg);color:var(--muted);border:1px solid var(--line);white-space:nowrap}
+.tag.fmt-video{color:var(--red);background:var(--red-soft);border-color:transparent}
+.tag.fmt-text{color:var(--blue);background:var(--blue-soft);border-color:transparent}
+.tag.free{color:var(--ok);background:var(--ok-soft);border-color:transparent;font-weight:600}
+.tag.wait{color:var(--pause);background:var(--pause-soft);border-color:transparent}
+.when{margin-left:auto;font-family:var(--f-mono);font-size:12px;color:var(--muted);white-space:nowrap}
+.why{font-size:14.5px}
+.inside{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:3px;font-size:14px}
+.inside li::marker{color:var(--blue)}
+.sub{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+details{border-top:1px dashed var(--line);padding-top:10px}
+summary{cursor:pointer;font-size:13.5px;font-weight:600;color:var(--blue);list-style:none;display:flex;align-items:center;gap:6px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font-family:var(--f-mono);width:14px}
+details[open] summary::before{content:"–"}
+.more{display:flex;flex-direction:column;gap:12px;padding-top:10px;font-size:14px}
+.sample{white-space:pre-line;background:var(--bg);border-radius:8px;padding:10px 12px;font-size:13.5px;border:1px solid var(--line)}
+.avoid{color:var(--muted)}
+.empty{padding:24px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);text-align:center}
+
+/* идеи на обсуждение */
+.extra{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:820px){.extra{grid-template-columns:1fr}}
+.idea{border:1px dashed var(--blue);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0;background:transparent}
+.idea p{font-size:14px}
+
+/* как работаем */
+.how{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+@media (max-width:820px){.how{grid-template-columns:1fr}}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:start;counter-increment:s}
+.steps li::before{content:counter(s);width:28px;height:28px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-family:var(--f-mono);font-size:13px}
+.rules{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.rules li::marker{color:var(--red)}
+.box{display:flex;flex-direction:column;gap:14px}
+footer{border-top:1px solid var(--line);padding-top:20px;font-size:14px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">МГИМО для иностранцев · студредакция</span>
+    <h1>Идеи русско-английской редакции</h1>
+    <p class="lead">Русско-английская редакция делает посты, подборки, карточки и интервью для Telegram и Instagram. Здесь темы на конец ноября и декабрь. План примерный: выбирайте то, что вам ближе, предлагайте свои идеи, сроки и форматы можно обсудить.</p>
+    <div class="ask" role="note">
+      <span class="mark" aria-hidden="true">?</span>
+      <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+        <span class="q">Чем вам больше хочется заниматься?</span>
+        <p>Напишите Ари в чате редакции до среды, 11 ноября, какое направление вам ближе и что хочется делать: тексты, карточки, интервью или субтитры к роликам китайской редакции.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="plats" aria-label="Площадки">
+    <div class="plat"><div class="row"><span class="name">Telegram</span><span class="state ok">основная площадка</span></div><p>Посты, подборки и интервью выходят в канале @mgimo_rusbac.</p></div>
+    <div class="plat"><div class="row"><span class="name">Instagram</span><span class="state ok">работает</span></div><p>Подборки и полезные темы выходят и здесь: каруселью из карточек 4:5.</p></div>
+    <div class="plat"><div class="row"><span class="name">Ролики китайской редакции</span><span class="state help">помогаем</span></div><p>Делаем к ним русские и английские субтитры, чтобы ролики выходили в Telegram и Instagram.</p></div>
+  </section>
+
+  <section class="filters" aria-label="Фильтры">
+    <div class="frow" id="f-dir-row"><span class="flabel">Направление</span></div>
+    <div class="frow"><span class="flabel">Показать</span>
+      <button class="chipbtn" id="f-free" type="button" aria-pressed="false">Только свободные темы</button>
+      <span class="count" id="count"></span>
+    </div>
+    <p class="legend">Темы с пометкой «свободная» пока ни за кем не закреплены. Остальные распределены предварительно: после ваших ответов можно поменяться.</p>
+  </section>
+
+  <main id="ideas" style="display:flex;flex-direction:column;gap:36px"></main>
+
+  <section class="box" aria-labelledby="extra-h">
+    <div class="dir-head"><h2 id="extra-h">Идеи на обсуждение</h2><p>Их пока нет в плане. Если какая-то зацепила, скажите Ари: обсудим и поставим в план.</p></div>
+    <div class="extra" id="extra"></div>
+  </section>
+
+  <section class="how" aria-label="Как мы работаем">
+    <div class="box">
+      <h2>Как мы работаем</h2>
+      <ol class="steps">
+        <li><span>Выбираете тему и пишете Ари.</span></li>
+        <li><span>За неделю до выхода присылаете план: тезисы для поста, вопросы для интервью или список для подборки.</span></li>
+        <li><span>Сдаете черновик за 3–4 дня до выхода в тему «Черновики», чтобы осталось время на правки.</span></li>
+        <li><span>Ари и проверяющий смотрят материал. После правок он выходит.</span></li>
+      </ol>
+    </div>
+    <div class="box">
+      <h2>Для всех материалов</h2>
+      <ul class="rules">
+        <li>Цены не называем ни в тексте, ни на карточках.</li>
+        <li>Про поступление, квоты и стоимость обучения не пишем: эти вопросы ведет Группа.</li>
+        <li>Посты до 2 000 знаков, живыми и простыми предложениями, без канцелярита.</li>
+        <li>Факты, даты и правила сверяем с официальными источниками МГИМО и организаторами.</li>
+        <li>Людей фотографируем и цитируем только с их согласия, фото свои, без лишних затылков.</li>
+        <li>Без политических оценок.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>Вопросы по любой теме задавайте Ари в чате редакции. План обновляется по мере ответов.</footer>
+</div>
+
+<script>
+const DIRS=[{"k": "study", "name": "Учеба", "about": "Как устроены учеба и сессия и что МГИМО дает сверх программы."}, {"k": "culture", "name": "Культура", "about": "Москва, кино, музеи, книги и праздники."}, {"k": "interview", "name": "Интервью", "about": "Истории студентов и советы преподавателей, рубрика #историяуспеха."}, {"k": "mgimo", "name": "МГИМО", "about": "Сообщества и клубы университета."}, {"k": "life", "name": "Быт и адаптация", "about": "Что помогает освоиться в первые месяцы."}, {"k": "events", "name": "Мероприятия", "about": "Живые встречи МГИМО для иностранных студентов."}];
+const FMTS=[{k:'',name:'Все'},{k:'video',name:'Видео'},{k:'text',name:'Посты и карточки'}];
+
+/* fmt: text; plats: строка; when: примерный период; free: свободная тема; wait: дата или автор уточняются */
+const IDEAS=[
+{
+"dir": "study",
+"fmt": "text",
+"kind": "Пост",
+"plats": "Telegram",
+"when": "середина ноября",
+"free": true,
+"wait": false,
+"title": "«Как устроена учеба в МГИМО»: сессия, зачеты, 100 баллов",
+"why": "Иностранный первокурсник впервые встречает зачетную неделю и сессию и часто не понимает, из чего складывается итоговая оценка. После поста он знает, что и когда сдает и как набирать баллы в течение семестра.",
+"inside": [
+"Как устроен учебный год: два семестра, зачетная неделя и сессия, примерные сроки зимней сессии",
+"Чем зачет отличается от экзамена и что такое зачет с оценкой",
+"100-балльная система: за что начисляются баллы в семестре (семинары, контрольные, эссе) и как они переводятся в оценку",
+"Что делать, если не получилось сдать с первого раза (пересдача, сроки сверить с учебным отделом)",
+"Один практический совет старшекурсника"
+],
+"volume": "Пост для Telegram до 2 000 знаков и одна схема «баллы → оценка». Простые предложения, без канцелярита.",
+"sample": "Как устроена учеба в МГИМО\n\nПервый семестр подходит к концу, и у первокурсников впереди первая сессия. Рассказываем, из чего она состоит и как к ней подготовиться спокойно.\n\nУчебный год в МГИМО делится на два семестра, и каждый завершается зачетной неделей и экзаменационной сессией. На зачете преподаватель проверяет, освоен ли курс, а экзамен проходит устно или письменно и заканчивается оценкой.\n\nИтоговая оценка складывается в течение всего семестра: баллы начисляются за работу на семинарах, контрольные и эссе. Поэтому к сессии многие студенты приходят уже с хорошим запасом…",
+"avoid": "Не пересказываем положения целиком и не пугаем отчислением. Цифры и сроки пишем только после сверки с учебным отделом."
+},
+{
+"dir": "culture",
+"fmt": "text",
+"kind": "Подборка",
+"plats": "Telegram, Instagram",
+"when": "конец ноября",
+"free": false,
+"wait": false,
+"title": "«7 фильмов, чтобы понять Россию»",
+"why": "Кино – самый легкий вход в чужую культуру. Подборка дает иностранцу семь фильмов, после которых ему понятнее Россия, ее история и люди.",
+"inside": [
+"Вступление: зачем смотреть русское кино в первые месяцы",
+"7 фильмов, по абзацу: название, год, режиссер, о чем фильм и что иностранец поймет о России",
+"Фильмы разных эпох: советская классика и современное кино",
+"Где посмотреть легально, лучше с субтитрами"
+],
+"volume": "Пост до 2 000 знаков. Для Instagram – карусель: постер и одна фраза о каждом фильме.",
+"sample": "Семь фильмов, чтобы понять Россию\n\nЯзык учат на занятиях, а страну проще почувствовать через кино. Мы выбрали семь фильмов разных лет: после них станет понятнее, как живут, шутят и о чем спорят в России.\n\n«Москва слезам не верит» (1979, Владимир Меньшов)\nИстория трех подруг, которые приезжают покорять столицу. Фильм получил «Оскар» и до сих пор объясняет, почему Москва для многих остается городом больших надежд.",
+"avoid": "Без кадров из фильмов (только постеры), без тяжелых и спорных фильмов для первого знакомства, без пиратских ссылок. Список сначала согласовать с Ари."
+},
+{
+"dir": "events",
+"fmt": "text",
+"kind": "Сторис / кружок",
+"plats": "Telegram, Instagram",
+"when": "конец ноября",
+"free": true,
+"wait": true,
+"title": "Эксчейндж старостата для иностранцев: съемка с места",
+"why": "Иностранные студенты должны видеть, что в МГИМО для них проходят живые встречи, в которые легко включиться.",
+"inside": [
+"Аудиозапись выступлений на диктофон телефона",
+"3–5 тезисов по ходу встречи",
+"1–2 коротких комментария участников: имя, страна, факультет",
+"3–5 вертикальных фрагментов по 5–10 секунд",
+"Кружок или сторис в тот же день"
+],
+"volume": "Материалы с места отдать Ари в тот же вечер. Текст отчета пишет Группа.",
+"sample": "Кружок: «Мы на встрече старостата с иностранными студентами: [что происходит]. Подробности – завтра в канале».",
+"avoid": "Не снимаем тех, кто просит не снимать, и затылки на переднем плане."
+},
+{
+"dir": "interview",
+"fmt": "text",
+"kind": "Интервью",
+"plats": "Telegram",
+"when": "конец ноября",
+"free": false,
+"wait": false,
+"title": "#историяуспеха: Арина Слюсаренко",
+"why": "Абитуриенты из СНГ и других стран видят реальный путь: олимпиада и Клуб иностранных абитуриентов помогают поступить в МГИМО. История дает уверенность и конкретные шаги.",
+"inside": [
+"Лид: кто героиня, откуда, факультет и курс",
+"Как узнала о МГИМО и почему решилась на олимпиаду",
+"Как готовилась: что помогло, что было труднее всего",
+"Чем помог Клуб иностранных абитуриентов",
+"Первые месяцы в МГИМО: что удивило и что помогло освоиться",
+"Совет тем, кто готовится сейчас"
+],
+"volume": "Текст до 2 500 знаков, 2–3 цитаты героини в прямой речи, 2–3 фото (портрет и кампус). План: 8–10 вопросов на согласование.",
+"sample": "Вопросы (каждый начинается с короткой рамки):\n1. Многие узнают о МГИМО случайно, кто-то готовится к поступлению с детства. Когда вы впервые услышали об университете и что тогда о нем знали?\n2. Олимпиада – это испытание и одновременно шанс поступить. Как вы решились участвовать и как выстроили подготовку?\n3. Какой этап оказался самым трудным и что помогло его пройти?\n4. Что дал Клуб иностранных абитуриентов еще до поступления?\n5. Что в учебе в МГИМО оказалось непохожим на школу?\n6. Что вы посоветуете тем, кто готовится к олимпиаде в этом году?\n\nНачало текста: Арина Слюсаренко приехала в МГИМО из Туркменистана и поступила через Международную олимпиаду. Еще год назад она готовилась к отборочному туру и знакомилась с университетом через Клуб иностранных абитуриентов, а сегодня учится на [факультет, курс].",
+"avoid": "Без вопроса «расскажи о своем пути» в лоб и без восторгов вместо фактов. Не пишем про стоимость обучения и квоты."
+},
+{
+"dir": "life",
+"fmt": "text",
+"kind": "Пост",
+"plats": "Telegram, Instagram",
+"when": "начало декабря",
+"free": false,
+"wait": true,
+"title": "Buddy: как устроена программа и чем помогает бадди",
+"why": "Новичку проще освоиться, когда рядом студент, который все покажет. Пост объясняет, что такое Buddy и как найти своего бадди.",
+"inside": [
+"Что такое Buddy в МГИМО, одной фразой",
+"Чем помогает бадди: кампус, первые дни, учебные вопросы, город",
+"Как подать заявку и найти бадди (сверить с организаторами)",
+"Как самому стать бадди",
+"Короткая цитата студента, у которого был бадди"
+],
+"volume": "Пост до 1 500 знаков и одно фото или карточка. Для Instagram – карусель на 3–4 карточки.",
+"sample": "Если вы только приехали в МГИМО, разбираться во всем самостоятельно не придется. В университете работает программа Buddy: студенты МГИМО помогают иностранным первокурсникам освоиться в кампусе и в Москве.",
+"avoid": "Без документов, медицины и сценариев «что делать, если…». Контакты только сверенные с программой."
+},
+{
+"dir": "interview",
+"fmt": "text",
+"kind": "Интервью",
+"plats": "Telegram",
+"when": "начало декабря",
+"free": false,
+"wait": false,
+"title": "#историяуспеха: одногруппницы MJ из Китая",
+"why": "Истории китайских студенток показывают русскоязычной аудитории, как живут иностранцы в МГИМО, и продолжают рубрику #историяуспеха.",
+"inside": [
+"2–3 героини, по каждой: откуда, факультет, почему МГИМО",
+"Самое трудное в первом семестре и как справились",
+"Что нравится в Москве и в университете",
+"Совет абитуриенту"
+],
+"volume": "Текст до 2 500 знаков. Героини отвечают письменно, MJ редактирует ответы и собирает текст. 2–3 фото. План: вопросы и согласие героинь.",
+"sample": "Вопросы (письменно, по-русски или по-английски):\n1. Почему для учебы вы выбрали Москву и МГИМО?\n2. Что в первом семестре оказалось самым трудным и как вы с этим справились?\n3. Какое место в Москве вы показали бы другу из Китая?\n4. Что посоветуете тем, кто только думает о поступлении?",
+"avoid": "Не меняем смысл ответов и не трогаем политические темы."
+},
+{
+"dir": "study",
+"fmt": "text",
+"kind": "Пост",
+"plats": "Telegram",
+"when": "начало декабря",
+"free": true,
+"wait": false,
+"title": "Как подготовиться к зачетной неделе",
+"why": "Перед первой зачетной неделей иностранные первокурсники волнуются. Пост за неделю до зачетов (зачетная неделя с 15 декабря) дает понятный порядок действий.",
+"inside": [
+"Когда зачетная неделя и чем она отличается от сессии",
+"Узнать требования по каждому предмету и проверить свои баллы",
+"Закрыть долги по семинарам и письменным работам",
+"Распределить время по дням",
+"К кому идти с вопросами: преподаватель, староста, учебный отдел",
+"Совет старшекурсника"
+],
+"volume": "Пост до 2 000 знаков, порядок действий по пунктам.",
+"sample": "До зачетной недели осталась неделя, и это хорошее время, чтобы спокойно проверить, все ли готово. Главное сейчас – понять, что именно потребуется по каждому предмету: тогда декабрь пройдет без ночей над учебниками.",
+"avoid": "Без пугающих формулировок и школьных «лайфхаков»."
+},
+{
+"dir": "culture",
+"fmt": "text",
+"kind": "Пост",
+"plats": "Telegram, Instagram",
+"when": "середина декабря",
+"free": false,
+"wait": false,
+"title": "Музеи, которые объясняют Россию",
+"why": "Музей за час дает больше понимания страны, чем неделя в интернете. Подборка трех музеев для первого знакомства с Россией.",
+"inside": [
+"Третьяковская галерея, Исторический музей, Музей Москвы",
+"По каждому: что увидеть за час (2–3 зала или экспоната) и что это говорит о России",
+"Как добраться от МГИМО"
+],
+"volume": "Пост до 2 000 знаков, 3–4 фото.",
+"sample": "Третьяковская галерея. Если времени мало, начните с залов древнерусской иконы и картин передвижников: за час станет понятно, как русские художники смотрели на свою страну и ее людей.",
+"avoid": "Без цен и длинной истории музеев."
+},
+{
+"dir": "life",
+"fmt": "text",
+"kind": "Карусель",
+"plats": "Telegram, Instagram",
+"when": "середина декабря",
+"free": false,
+"wait": true,
+"title": "Приложения, которые стоит скачать в России",
+"why": "Первые дни в Москве проще, когда на телефоне уже стоят нужные приложения.",
+"inside": [
+"Карты и транспорт",
+"Такси",
+"Доставка еды и продуктов",
+"Переводчик",
+"По каждому: зачем нужно и что умеет"
+],
+"volume": "Карусель 5–6 карточек и короткий текст до 1 000 знаков.",
+"sample": "Яндекс Карты. Маршруты на метро и автобусе с точным временем прибытия транспорта: в первые недели это главное приложение в телефоне.",
+"avoid": "Без инструкций по документам и банкам, без рекламы."
+},
+{
+"dir": "interview",
+"fmt": "text",
+"kind": "Интервью",
+"plats": "Telegram",
+"when": "середина декабря",
+"free": false,
+"wait": false,
+"title": "Преподаватель: один вопрос, важный абитуриенту",
+"why": "Совет преподавателя звучит для абитуриента весомо: из первых уст он узнает, что помогает иностранцу пройти первый курс.",
+"inside": [
+"Короткое представление преподавателя",
+"Один главный вопрос и развернутый ответ",
+"2–3 практических совета, как готовиться к первому курсу"
+],
+"volume": "Текст до 2 000 знаков и фото. План: вопрос и согласие преподавателя.",
+"sample": "Вопрос: Каждый год в МГИМО приходят студенты из десятков стран, и одни быстро находят свой ритм, а другим требуется больше времени. Что отличает тех, кто уверенно проходит первый курс, и что стоит сделать еще до поступления?",
+"avoid": "Без вопросов, на которые нужно оправдываться, и без общих слов."
+},
+{
+"dir": "mgimo",
+"fmt": "text",
+"kind": "Карточки",
+"plats": "Telegram, Instagram",
+"when": "середина декабря",
+"free": true,
+"wait": false,
+"title": "Клубы МГИМО по регионам: Азия",
+"why": "Иностранец ищет в МГИМО сообщество по интересам и людей, которым интересна его страна. Серия по регионам показывает, какие клубы есть и как в них вступить.",
+"inside": [
+"Обложка: клубы МГИМО, где изучают Азию",
+"4–5 клубов, по карточке на каждый: чем занимается, как часто встречи, как вступить",
+"Например, Корейский клуб: разговорные встречи дважды в неделю",
+"Финальная карточка: где следить за анонсами НСО"
+],
+"volume": "Обложка и 5–6 карточек 4:5, текст поста до 700 знаков.",
+"sample": "Клубы МГИМО по регионам: Азия\n\nВ МГИМО больше 40 научных клубов, и многие из них посвящены отдельным странам и регионам. Здесь обсуждают новости, говорят на языке региона и приглашают экспертов. Начинаем с Азии: листайте карточки и выбирайте клуб по душе.",
+"avoid": "Без неактивных клубов и без формулировок о странах как «объектах изучения»."
+},
+{
+"dir": "culture",
+"fmt": "text",
+"kind": "Пост",
+"plats": "Telegram, Instagram",
+"when": "конец декабря",
+"free": false,
+"wait": false,
+"title": "«Новый год в России»: как иностранные студенты встречают его в Москве",
+"why": "Новый год – главный праздник в России, и иностранному студенту важно понять, как его встречают и что он значит.",
+"inside": [
+"Традиции: елка, бой курантов, оливье, подарки",
+"Как иностранные студенты встречают праздник в Москве: 2–3 коротких рассказа",
+"Куда сходить в новогодние дни"
+],
+"volume": "Пост до 2 000 знаков и 2–3 фото.",
+"sample": "Новый год в России – главный семейный праздник: его ждут весь декабрь, а в полночь вся страна слушает бой курантов.",
+"avoid": "Без цен и рекламы мест."
+},
+{
+"dir": "study",
+"fmt": "text",
+"kind": "Пост",
+"plats": "Telegram, Instagram",
+"when": "конец декабря",
+"free": true,
+"wait": true,
+"title": "Модель ООН C-MIMUN: что она дает и как попасть",
+"why": "Модель ООН – самый быстрый способ попробовать себя в роли дипломата: выступать, вести переговоры и писать резолюции. Для иностранца это еще и место, где его родной язык становится преимуществом.",
+"inside": [
+"Что такое модель ООН, одной фразой",
+"C-MIMUN в цифрах: больше 1000 участников, 16 комитетов на всех официальных языках ООН, крупнейшая модель в России и Восточной Европе",
+"Какие навыки дает: публичные выступления, переговоры, работа с документами ООН, дипломатический протокол, работа в команде",
+"Как попасть: регистрация делегатов, сроки, что подготовить (уточнить)",
+"Цитата участника прошлого года, лучше иностранного студента"
+],
+"volume": "Пост до 2 000 знаков и фото с открытия C-MIMUN 2026.",
+"sample": "",
+"avoid": "Без непроверенных сроков регистрации."
+},
+{
+"dir": "study",
+"fmt": "text",
+"kind": "Пост",
+"plats": "Telegram",
+"when": "конец декабря",
+"free": true,
+"wait": false,
+"title": "Навыки для трудоустройства: что развить в МГИМО",
+"why": "Иностранному студенту важно понимать, какие навыки МГИМО дает сверх программы и как они помогают в будущей работе.",
+"inside": [
+"Языки",
+"Публичные выступления",
+"Проектная работа",
+"Модель ООН",
+"Студенческие объединения",
+"По каждому: какой навык дает и как начать"
+],
+"volume": "Пост до 2 000 знаков.",
+"sample": "Кроме лекций и семинаров, МГИМО дает навыки, которые пригодятся в любой работе: языки, публичные выступления, проектный опыт. Рассказываем, с чего начать каждый из них.",
+"avoid": "Без обещаний трудоустройства и разговора о работе в госструктурах."
+},
+{
+"dir": "culture",
+"fmt": "text",
+"kind": "Карусель",
+"plats": "Telegram, Instagram",
+"when": "конец декабря",
+"free": true,
+"wait": false,
+"title": "Шедевры русской литературы и где их почувствовать в Москве",
+"why": "Зимние каникулы – время для большой книги. Подборка знакомит с главными романами русской литературы и показывает, где в Москве можно почувствовать мир их авторов.",
+"inside": [
+"Вход: каникулы – время для большой книги",
+"Достоевский, «Преступление и наказание» – Музей-квартира Ф.М. Достоевского",
+"Толстой, «Война и мир» – музей-усадьба «Хамовники»",
+"Булгаков, «Мастер и Маргарита» – Патриаршие пруды и Музей М.А. Булгакова",
+"Пушкин, «Евгений Онегин» – мемориальная квартира на Арбате",
+"Чехов, рассказы – Дом-музей А.П. Чехова",
+"Совет: читать в оригинале с параллельным переводом"
+],
+"volume": "Обложка и 6 карточек 4:5, текст поста до 1 000 знаков.",
+"sample": "«Преступление и наказание», Федор Достоевский\nРоман о совести и выборе, после которого иначе смотришь на человека. Достоевский родился в Москве, и в квартире, где прошло его детство, сегодня музей.",
+"avoid": "Без цен и длинных биографий: одна мысль о книге и одно место в Москве."
+}
+];
+
+const EXTRA=[
+{
+"title": "Татьянин день: праздник студентов",
+"fmt": "Telegram, пост",
+"text": "25 января в России отмечают День студентов. Пост о том, откуда взялся праздник и как его встречают в МГИМО."
+},
+{
+"title": "Масленица: как Москва провожает зиму",
+"fmt": "Telegram и Instagram, подборка",
+"text": "Блины, гуляния и праздничные площадки в городе: что иностранцу стоит увидеть в масленичную неделю."
+},
+{
+"title": "Первая курсовая: с чего начать",
+"fmt": "Telegram, пост",
+"text": "Как выбрать тему и научного руководителя, сколько времени закладывать и где искать источники."
+},
+{
+"title": "Дополнительное образование в МГИМО",
+"fmt": "Telegram, пост",
+"text": "Какие программы можно пройти вместе с основной учебой и как на них записаться. Факты сверяем с университетом."
+},
+{
+"title": "Клубы МГИМО по регионам: продолжение серии",
+"fmt": "Telegram и Instagram, карточки",
+"text": "С января серия продолжается: Европа, Ближний Восток и Африка, Латинская Америка."
+}
+];
+
+const S={dir:'',fmt:'',free:false};
+const $=s=>document.querySelector(s);
+function esc(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function plural(n){const a=n%10,b=n%100;if(a===1&&b!==11)return'тема';if(a>=2&&a<=4&&(b<12||b>14))return'темы';return'тем';}
+
+function card(it){
+  let tags='<span class="tag '+(it.fmt==='video'?'fmt-video':'fmt-text')+'">'+esc(it.kind)+'</span><span class="tag">'+esc(it.plats)+'</span>';
+  if(it.free) tags+='<span class="tag free">свободная</span>';
+  if(it.wait) tags+='<span class="tag wait">уточняется</span>';
+  let more='';
+  if(it.volume) more+='<div><div class="sub">Формат и объем</div><p>'+esc(it.volume)+'</p></div>';
+  if(it.sample) more+='<div><div class="sub">Пример</div><div class="sample">'+esc(it.sample)+'</div></div>';
+  if(it.avoid) more+='<div><div class="sub">Не делаем</div><p class="avoid">'+esc(it.avoid)+'</p></div>';
+  return '<article class="card"><div class="meta">'+tags+'<span class="when">'+esc(it.when)+'</span></div>'+
+    '<h3>'+esc(it.title)+'</h3><p class="why">'+esc(it.why)+'</p>'+
+    '<div><div class="sub">Что внутри</div><ul class="inside">'+it.inside.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></div>'+
+    (more?'<details><summary>Формат, пример и что не делаем</summary><div class="more">'+more+'</div></details>':'')+
+    '</article>';
+}
+
+function render(){
+  const list=IDEAS.filter(it=>(!S.dir||it.dir===S.dir)&&(!S.fmt||it.fmt===S.fmt)&&(!S.free||it.free));
+  let h='';
+  DIRS.forEach(d=>{
+    const items=list.filter(it=>it.dir===d.k);
+    if(!items.length) return;
+    h+='<section class="dir" aria-labelledby="d-'+d.k+'"><div class="dir-head"><h2 id="d-'+d.k+'">'+esc(d.name)+'</h2><span class="n">'+items.length+' '+plural(items.length)+'</span><p>'+esc(d.about)+'</p></div><div class="grid">'+items.map(card).join('')+'</div></section>';
+  });
+  $('#ideas').innerHTML=h||'<div class="empty">По этим фильтрам тем нет. Сбросьте один из фильтров или предложите свою тему Ари.</div>';
+  $('#count').textContent=list.length+' '+plural(list.length)+' из '+IDEAS.length;
+  document.querySelectorAll('[data-dir]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.dir===S.dir)));
+  document.querySelectorAll('[data-fmt]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.fmt===S.fmt)));
+  $('#f-free').setAttribute('aria-pressed',String(S.free));
+}
+
+function init(){
+  const dr=$('#f-dir-row');
+  dr.insertAdjacentHTML('beforeend','<button class="chipbtn" type="button" data-dir="">Все</button>'+DIRS.map(d=>'<button class="chipbtn" type="button" data-dir="'+d.k+'">'+esc(d.name)+'</button>').join(''));
+  document.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b) return;
+    if(b.hasAttribute('data-dir')){S.dir=b.dataset.dir;render();}
+    else if(b.hasAttribute('data-fmt')){S.fmt=b.dataset.fmt;render();}
+    else if(b.id==='f-free'){S.free=!S.free;render();}
+  });
+  $('#extra').innerHTML=EXTRA.map(x=>'<div class="idea"><div class="meta"><span class="tag">'+esc(x.fmt)+'</span>'+(x.wait?'<span class="tag wait">уточняется</span>':'')+'</div><h3>'+esc(x.title)+'</h3><p>'+esc(x.text)+'</p></div>').join('');
+  render();
+}
+init();
+</script>
+</body>
+</html>
